@@ -1,0 +1,859 @@
+﻿<!--Untitled Theme version 1.1 designed by MisterTiger (www.mistertiger.tumblr.com) for Tumblr-->
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+     
+        <head>
+            <title>{text:BrowserTitle}</title>
+            <link rel="shortcut icon" href="{Favicon}">
+            <link rel="alternate" type="application/rss+xml" href="{RSS}">
+            {block:Description}
+                <meta name="description" content="{MetaDescription}" />
+            {/block:Description}
+               
+        <meta charset="utf-8" />
+    
+    <meta name="image:Background" content="" />
+    <meta name="color:BackGround Color" content="" />
+    <meta name="font:Body Text" content="" />
+    
+    <meta name="text:My Computer" content="" />
+    <meta name="text:BrowserTitle" content="" />
+    
+    <meta name="if:Archive Link" content="1" />
+    <meta name="if:Endless Scroll" content="1" />
+    
+    <meta name="color:Link Color" content="#0645AD" />
+    <meta name="color:Link Hover" content="#3366BB" />
+    <meta name="color:Label Color" content="#FFFFFF" />
+    <meta name="color:Text Color" content="#3e423d" />
+    <meta name="color:Border Color" content="#084fbe" />
+    
+    <meta name="text:HyperLink 1" content="" />
+    <meta name="text:LinkTitle 1" content"" />
+    <meta name="text:HyperLink 2" content="" />
+    <meta name="text:LinkTitle 2" content"" />
+    <meta name="text:HyperLink 3" content="" />
+    <meta name="text:LinkTitle 3" content"" />
+    <meta name="text:HyperLink 4" content="" />
+    <meta name="text:LinkTitle 4" content"" />
+    <meta name="text:HyperLink 5" content="" />
+    <meta name="text:LinkTitle 5" content"" />
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
+        <style type="text/css">
+     
+        body {
+            font-size: 14px;
+            height:100%;
+            line-height: 125%;
+            padding: 0;
+            margin: 0;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+            background-image: url('{image:Background}');
+            background-repeat:no-repeat;
+            background-color: {color:BackGround Color};
+            color: {color:Text Color};
+            font-family: {font:Body Text}, 'MS Sans Serif';
+            
+        }
+       
+        body::-webkit-scrollbar { 
+            display: none; 
+        }
+        a:link {text-decoration: none; color: {color:Link Color};
+        } /* unvisited link */
+        a:visited {text-decoration: none; color: {color:Link Color} ;
+        } /* visited link */
+        a:hover {text-decoration: underline; color: {color:Link Hover};
+        }   /* mouse over link */
+        a:active {text-decoration: underline; color: {color:Link Color};
+        }  /* selected link */
+        
+        /*Image Sprite used for Icons, Start button, and Start Menu*/
+        .myComputer, .askImage, .submitImage, .pageImage, .archiveImage, .start, .start:hover, .quick-start, .time, .start-menu, .caption-index, .arrow-up, .arrow-right, .arrow-left, #profile {
+            background-image: url("http://static.tumblr.com/7ca5bgd/JuTmz6clp/xp_icons.png");
+        }
+        
+        
+        #menu {
+            display: block;
+            width: 100px;
+            position: absolute; 
+            padding: 0px;
+            top: 10px;
+            left: 10px;  
+        }
+        .icon {z-index: 4; word-wrap:break-word;}
+        .myComputer, .askImage, .submitImage, .pageImage, .archiveImage 
+        {
+            margin: auto; 
+            display: block;
+            margin-top: 10px;
+        }
+        .label, .label a, .label a:hover{ 
+            text-align: center;
+            text-decoration: none;
+            text-shadow: 1px 1px #000000;
+            color: {color:Label Color};
+        }
+        .myComputer {
+            height: 40px;
+            width: 40px;
+            background-position: 0px 0px;
+        }
+        .askImage {
+            height: 40px;
+            width: 40px;
+            background-position: 0px -120px;
+        }
+        .submitImage{
+            height: 40px;
+            width: 40px;
+            background-position: 0px -40px;
+        }
+        .pageImage {
+            height: 40px;
+            width: 40px;
+            background-position: 0px -160px;
+        }
+        .archiveImage {
+            height: 40px;
+            width: 40px;
+            background-position: 0px -80px;
+        }
+        /*----------------------------------------------*/
+        #wrapper-posts {
+            display: block; 
+            position: relative; 
+            top: 20px;
+            left: 200px;
+            width: 600px;
+            height: 90%;
+            overflow: auto; 
+            padding-bottom: 40px;
+        }
+        #wrapper-posts::-webkit-scrollbar { 
+            display: none; 
+        }
+        .posts {
+            display: block; 
+            -moz-box-sizing: border-box; 
+            -webkit-box-sizing: border-box; 
+            box-sizing: border-box;
+            overflow: auto;
+            position: relative;
+            width: 600px; 
+            margin: 0px 0px 20px 0px;
+            padding: 25px;
+            border-width: 4px;
+            border-style: none solid solid solid;
+            background-color: white;
+            border-color: {color:Border Color}; 
+        }
+        .caption-index {
+            display: block; 
+            margin: 0; padding: 0;
+            width: 600px;
+            height: 76px;
+            background-position: -41px 0px;
+        }
+        .caption {
+            display: block; 
+            position: relative;
+            top: 56px;
+            width: 580px;
+            margin-left: 10px;
+        }
+        .caption a, .caption a:hover, .caption {
+            color: #3e423d; font-size: 12px; text-decoration: none;
+        }
+        .tags {
+            margin: -30px 0px 20px 0px;
+        }
+        /*----------------------------------------------*/
+        .posts .copy {
+            padding: 0;
+            margin: 0;
+        }
+        .posts blockquote {
+            margin-left: 20px;
+            padding-left: 4px;
+            border-left: 3px solid {color:Border Color};
+            min-width: 150px;
+        }
+        .posts .photo {
+            min-width:540px;
+            max-width: 545px;
+        }
+        .posts .text-title {
+            font-weight: bold;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            line-height: 105%;
+        }
+        .quote.short {
+            font-size: 30px;
+            line-height: 110%;
+        }
+        .quote.medium {
+            font-size: 25px;
+            line-height: 110%;
+        }
+        .quote.long {
+            font-size: 18px;
+            line-height: 110%;
+        }
+        .posts table, .posts table tr td {
+            border: 1px solid  {color:Border Color};
+        }
+        .posts .ask {
+            border-radius: 5px;
+            -moz-border-radius: 10px;
+            padding: 2px;
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            border: 2px dashed {color:Border Color};
+        }
+        /* loader-ellips
+------------------------- */
+
+        .loader-ellips {
+          font-size: 20px;
+          position: relative;
+          width: 4em;
+          height: 1em;
+          margin: 10px auto;
+          left: 150px;
+        }
+        
+        .loader-ellips__dot {
+          display: block;
+          width: 1em;
+          height: 1em;
+          border-radius: 0.5em;
+          background: #555;
+          position: absolute;
+          animation-duration: 0.5s;
+          animation-timing-function: ease;
+          animation-iteration-count: infinite;
+        }
+        
+        .loader-ellips__dot:nth-child(1),
+        .loader-ellips__dot:nth-child(2) {
+          left: 0;
+        }
+        .loader-ellips__dot:nth-child(3) { left: 1.5em; }
+        .loader-ellips__dot:nth-child(4) { left: 3em; }
+        
+        @keyframes reveal {
+          from { transform: scale(0.001); }
+          to { transform: scale(1); }
+        }
+        
+        @keyframes slide {
+          to { transform: translateX(1.5em) }
+        }
+        
+        .loader-ellips__dot:nth-child(1) {
+          animation-name: reveal;
+        }
+        
+        .loader-ellips__dot:nth-child(2),
+        .loader-ellips__dot:nth-child(3) {
+          animation-name: slide;
+        }
+        
+        .loader-ellips__dot:nth-child(4) {
+          animation-name: reveal;
+          animation-direction: reverse;
+        }
+
+        .scroller-status__message {
+            display: none;
+        }
+        /*----------------------------------------------*/
+        #profile {
+            display: block;
+            position: absolute;
+            top: 150px; left: 850px;
+            height: 216px; width: 300px;
+            margin-right: 50px;
+            background-position: -336px -238px;
+        }
+        .pro-title {
+            display: block;
+            position: absolute;
+            top: 8px;
+            left: 30px;
+            color: rgb(255,255,255);
+        }
+        .pro-title img {
+            padding: 0; margin: 0;
+            position: absolute;
+            left: -24px; top: -3px;
+        } 
+        .pro-description {
+            display: block;
+            position: absolute;
+            width: 220px; height:125px;
+            top: 45px; left: 60px;
+            overflow: auto;
+            word-wrap:break-word;
+        }
+        #hide {
+            position: absolute;
+            display: block;
+            top: 175px; left: 111px;
+            width: 80px; height: 23px; 
+            background-image: url("http://static.tumblr.com/7ca5bgd/kQvmznvtl/button_ok.png");
+            background-position: 0px -23px;
+        }
+        #hide:hover {
+            background-position: 0px 0px;
+        }
+        /*---------------------------------------------*/
+        .notes {
+            display: block;
+            position: relative;
+            left: 0px;
+            top: -15px;
+            width: 500px; 
+        }
+        .notes ol{
+            background-color: #FFF;
+            margin: 0; padding: 10px 46px 50px 46px;
+            border-width: 4px;
+            border-style: none solid solid solid;
+            border-color: {color:Border Color};
+        }
+        .pagination {
+            display: block;
+            position: relative;
+            top: -25px;
+            left: 200px;
+        }
+        .arrow-up, .arrow-right, .arrow-left {
+            display: block;
+            margin: 1px;
+            width: 25px;
+            height: 25px;
+            float: left;
+        }
+        .arrow-left {
+            background-position: -616px -76px;
+        }
+        .arrow-up {
+            background-position: -616px -126px;
+        }
+        .arrow-right {
+            background-position: -616px -101px;
+        }
+        /*---------------------------------------------*/
+        #submenu {
+            display: block;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            min-width: 100%;
+            width: 500px;
+            height: 30px;
+            background-image: url('http://static.tumblr.com/7ca5bgd/3Rrms4bv0/blue_menu.png');
+            background-repeat: repeat-x;
+            z-index: 5;
+        }
+        .start {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 30px;
+            background-position: -41px -172px;
+        }
+        .start:hover {
+            background-position: -41px -206px;
+        }
+        .start-menu {
+            display: none; 
+            position: absolute;
+            bottom: 30px;
+            width: 334px;
+            height: 420px;
+            background-position: 0px -239px;
+        }
+        .start:hover .start-menu {display: block;}
+        .avi {
+            display: block;
+            position: absolute; 
+            left: 9px;
+            top: 9px;
+        }
+        .start-title {
+            display: block; 
+            position: absolute; 
+            top: 18px;
+            left: 60px;
+            overflow: hidden; 
+            width: 260px;
+            height: 30px;
+        }
+        .start-title a, .start-title a:hover {
+            color: #FFFFFF; 
+            font-size: 20px;
+            text-shadow: 1px 1px #000000;
+            text-decoration: none;
+        }
+        .program {
+            display: block;
+            width: 160px;
+            height: 31px;
+            position: absolute; 
+            top: 353px;
+            left: 2px;
+        }   
+        .program:hover {background-color:rgba(12,95,203,0.3);}
+        .program:hover .custlinks {
+            display: block;
+        }
+        .custlinks {
+            display: none;
+            position: absolute;
+            bottom: 0px;
+            left: 126px;
+            height: 150px; 
+            width: 200px;
+            background-color: #FFF;
+            z-index: 7;
+            border-left: 4px solid #4488EE;
+            
+            font-size: 12px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .custlinks a {
+            display:block;
+            padding: 10px 0px 0px 10px;
+            height: 20px;
+        }
+        .custlinks a:hover {
+            background-color:rgba(12,95,203,0.5);
+            color:#FFF;
+            text-decoration: none;
+        }
+        .log-off {
+            display: block; 
+            width: 65px;
+            height: 30px;
+            position: absolute; 
+            top: 387px;
+            left: 152px;
+        }
+        .log-off:hover {background-color:rgba(12,95,203,0.3);}
+        .search {
+            display: block;
+            background-color: red;
+            position: absolute; 
+            top: 350px;
+            left: 175px;
+        }
+        .searchbox_submit {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        .quick-start {
+            position: absolute;
+            top: 0;
+            left: 100px;
+            width:125px;
+            height: 30px;
+            background-position: -41px -138px;
+        }
+        .time {
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width:88px;
+            height: 30px;
+            background-position: -41px -102px;   
+        }
+        #clock {
+            display: block;
+            color: white;
+            font-size: 11px;
+            position: relative; 
+            top: 7px;
+            left: 30px;
+        }
+        
+        {CustomCSS}
+        </style>
+               
+             
+        </head>
+    
+     
+     
+    <body>
+    
+    
+    <div id="menu">
+        <div class="icon">
+            <a href="/" class="myComputer" title="Home"></a>
+            <div class="label"><a href="/">{text:My Computer}</a></div>
+        </div>
+        {block:AskEnabled}
+        <div class="icon">
+            <a href="/ask/" title="Ask" class="askImage"></a>
+            <div class="label"><a href="/ask/">{AskLabel}</a></div>
+        </div>
+        {/block:AskEnabled}
+        {block:SubmissionsEnabled}
+        <div class="icon">
+            <a href="/submit/" title="Submit" class="submitImage"></a>
+            <div class="label"><a href="/submit/">{SubmitLabel}</a></div>
+        </div>
+        {/block:SubmissionsEnabled}
+        {block:HasPages}
+            {block:Pages}
+            <div class="icon">
+                <a href="{URL}/" class="pageImage"></a>
+                <div class="label"><a href="{URL}/">{Label}</a></div>
+            </div>
+            {/block:Pages}
+        {/block:HasPages}
+        {block:IfArchiveLink}
+        <div class="icon">
+            <a href="/archive/" class="archiveImage"></a>
+            <div class="label"><a href="/archive/">Archive</a></div>
+        </div>
+        {/block:IfArchiveLink}
+    </div>    
+   <!--End of [icon] Menu-->
+   
+   
+   
+ 
+    <div id="wrapper-posts">
+    {block:Posts}
+    
+    
+        {block:IndexPage}
+            <div class="caption-index">  
+                <span class="caption">
+                    <a href="{Permalink}">
+                     Posted on {block:Date}{DayOfWeek}, {Month} {DayOfMonthWithZero}, {Year} {/block:Date}  
+                     {block:NoteCount}
+                        with
+                        {NoteCount}
+                        Notes
+                     {/block:NoteCount}
+                    </a>
+                </span>
+            </div>
+        {/block:IndexPage}
+    
+    
+        {block:PermalinkPage}                    
+            <div class="caption-index">
+                <span class="caption">
+                    <a href="{PhotoURL-HighRes}">&nbsp;High Res </a>
+                    {block:ContentSource}
+                        <a href="{SourceURL}">&nbsp;Source</a>
+                    {/block:ContentSource}
+                    {block:RebloggedFrom}
+                    &nbsp;VIA:<a href="{ReblogParentURL}">{ReblogParentName}  </a>
+                    &nbsp;Original:<a href="{ReblogRootURL}">{ReblogRootName} </a>
+                    {/block:RebloggedFrom}
+                    <a href="{ReblogURL}">&nbsp;Reblog</a>
+                    &nbsp;{NoteCount} Notes 
+                </span>
+            </div>
+        {/block:PermalinkPage}
+    
+    
+    
+    
+    
+        {block:Text}
+            <div class="posts">
+                {block:Title}
+                    <div class="text-title"><a href="{Permalink}">{Title}</a></div>
+                {/block:Title}
+                <div class="text">{Body}</div>
+            </div>
+        {/block:Text}
+         
+         
+        {block:Photo}
+             <div class="posts">
+                <a href="{Permalink}"><img class="photo" src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/></a> 
+                {block:Caption}
+                    <div class="copy">{Caption}</div>
+                {/block:Caption}
+             </div>
+        {/block:Photo}
+        
+        
+        {block:Photoset} 
+             <div class="posts">
+             {Photoset-500}
+             
+             {block:Caption} 
+                <div class="copy">{Caption}</div>
+             {/block:Caption}
+             </div>
+        {/block:PhotoSet}
+        
+        
+        {block:Quote} 
+            <div class="posts">
+                <div class="quote {Length}">"{Quote}"</div>
+                {block:Source}
+                    <br />- {Source}
+                {/block:Source}
+            </div>
+        {/block:Quote}
+        
+        
+        {block:Link}
+            <div class="posts">
+                <div class="text-title">
+                <a href="{URL}" {Target}>{Name}</a>
+                </div>
+                {block:Description}
+                <div class="copy">{Description}</div>
+                {/block:Description}
+            </div>
+        {/block:Link}
+        
+        
+        {block:Chat}
+            <div class="posts">
+                {block:Title}
+                <div class="text-title">{Title}</div>
+                {/block:Title}
+                
+                <table>
+                    {block:Lines}
+                             <tr>
+                             {block:Label}
+                                <td>{Label}</td>
+                             {/block:Label}
+                                <td>{Line}</td>
+                            </tr>
+                    {/block:Lines}
+                </table>
+            </div>
+        {/block:Chat}
+        
+        
+        {block:Audio}
+            <div class="posts">
+                {AudioPlayerBlack}
+
+                {block:Caption}
+                    <div class="copy">{Caption}</div>
+                {/block:Caption}
+            </div>
+        {/block:Audio}
+
+
+        {block:Video}
+            <div class="posts">
+                {Video-500}
+
+                {block:Caption}
+                    <div class="copy">{Caption}</div>
+                {/block:Caption}
+            </div>
+        {/block:Video}
+
+
+        {block:Answer}
+            <div class="posts">
+                    <div class="ask">
+                        {Question}
+                    </div>
+                    - <span style="font-size: 11px;">{Asker}</span> 
+                <div class="answer">
+                <blockquote>{Answer}</blockquote>
+                </div>
+                
+            </div>
+        {/block:Answer}
+        
+        {block:Panorama}
+            <div class="posts">
+                {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+            
+                {block:Caption}
+                    {Caption}
+                {/block:Caption}
+                
+             
+            </div>
+        {/block:Panorama}
+
+
+        {block:PostNotes}
+            <div class="notes">
+                {PostNotes}
+            </div>
+        {/block:PostNotes}
+        
+        {block:HasTags}
+            <span class="posts tags">
+                {block:Tags}
+                  #<a href="{TagURL}">{Tag}</a>
+                {/block:Tags}
+            </span>
+        {/block:HasTags}
+    {/block:Posts}
+    
+    </div>
+    <!--End of wrapper-posts-->
+    
+    <div class="pagination">
+        {block:PreviousPage}
+            <a href="{PreviousPage}" class="arrow-left"></a>
+        {/block:PreviousPage}
+        <a href="#" class="arrow-up"></a>
+        {block:NextPage}
+        <a href="{NextPage}" class="arrow-right"></a>
+        {/block:NextPage}
+    </div>
+    
+    {block:IfEndlessScroll}
+    <!-- Loading dots from https://infinite-scroll.com -->
+   <div class="scroller-status">
+      <div class="loader-ellips infinite-scroll-request">
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+        <span class="loader-ellips__dot"></span>
+      </div>
+      
+      <p class="scroller-status__message infinite-scroll-error">.</p>
+    </div> 
+    <!--End of Posts-->
+    
+    <!-- Endless scroll example https://codepen.io/velopert/pen/grRAbQ
+    https://stackoverflow.com/questions/6271237/
+    -->
+    <script> 
+        //hide pagination 
+        $(".pagination").hide();
+        
+        let page = 2; 
+        let blog = '{BlogURL}'+'page/';
+        
+       $(window).scroll(function() {
+    if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            console.log(blog + page);
+            //display load dots 
+            
+           $("<div>").load(blog + page +" #wrapper-posts", function( response, status, xhr) {
+                let newposts = $(this).find("#wrapper-posts").html(); 
+                if(!newposts.trim()) {
+                    //console.log("No new posts" + newposts);
+                    //show status no new posts 
+                    
+                    //hide dots, show pagination
+                    $(".loader-ellips").hide();
+                    $(".pagination").show();
+                }
+                else {
+                    //append new posts 
+                     $("#wrapper-posts").append(newposts);
+                     page++;
+                }
+               
+            });
+        } //if reach end of page load new one
+    });
+    </script>
+    {/block:IfEndlessScroll}
+    
+
+    <div id="profile">
+        <div class="pro-title">
+            <img src="{PortraitURL-24}" alt="icon" width="20"/> {Title}
+        </div>
+        <div class="pro-description">
+            {Description} 
+        </div>
+        
+        <div id="hide"></div>
+    </div> 
+    
+    <script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("#profile").hide(); 
+            });
+    });
+    
+      $( function() {
+        $(".icon").draggable();
+      } );
+    </script>
+
+<!------------------------------------------------------ -->
+    <div id="submenu">
+    
+        <div class="start">
+            <div class="start-menu">
+                <a href="/">
+                <img src="{PortraitURL-40}" class="avi" alt="{Title}"/>
+                </a>
+                <span class="start-title"><a href="/">{Title}</a></span>
+                <div class="program">
+                    <div class="custlinks">
+                    
+                    <a href="{text:HyperLink 1}">{text:LinkTitle 1}</a>
+                    <a href="{text:HyperLink 2}">{text:LinkTitle 2}</a>
+                    <a href="{text:HyperLink 3}">{text:LinkTitle 3}</a>
+                    <a href="{text:HyperLink 4}">{text:LinkTitle 4}</a>
+                    <a href="{text:HyperLink 5}">{text:LinkTitle 5}</a>
+                    
+                    </div>
+                </div>
+                
+                <a class="log-off" href="http://www.tumblr.com/dashboard">
+                </a>
+                <div class="search">
+                    <form action="/search" method="get">
+                    <input type="text" name="q" value="{SearchQuery}" class="input"/>
+                    <input type="image" src="http://www.santarosadancetheater.com/images/magnifying_glass.png" class="searchbox_submit" value="" />
+                    </form>
+                </div>
+            </div>  
+        </div>
+        
+        <div class="quick-start"></div>
+        <div class="time"><span id="clock">&nbsp;</span></div>
+        <script type="text/javascript">
+        <!--function updateClock ( )
+        {var currentTime = new Date ( );
+        var currentHours = currentTime.getHours ( );
+        var currentMinutes = currentTime.getMinutes ( );
+        currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+        var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+        currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+        currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+        var currentTimeString = currentHours + ":" + currentMinutes + "" + timeOfDay;
+        document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+        }
+        </script>
+    </div>
+    <!--End of Sub Menu-->
+    
+    
+    </body>
+    </html>
