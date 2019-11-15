@@ -1223,37 +1223,7 @@
         $(".action").each(function(index) {
             var cl = $(this).parent()[0].classList.toString().split(" ");
             cl[2] = cl[2].replace('tumblelog_', '');
-            console.log(cl[2]);
-            
-            var exts = ".exe";
-            var extn = Math.floor(Math.random()*26);
-            if (extn == 0) { exts = ".exe"; }
-            else if (extn == 1) { exts = ".jpg"; }
-            else if (extn == 2) { exts = ".gif"; }
-            else if (extn == 3) { exts = ".png"; }
-            else if (extn == 4) { exts = ".bmp"; }
-            else if (extn == 5) { exts = ".tga"; }
-            else if (extn == 6) { exts = ".doc"; }
-            else if (extn == 7) { exts = ".psd"; }
-            else if (extn == 8) { exts = ".wav"; }
-            else if (extn == 9) { exts = ".mp3"; }
-            else if (extn == 10) { exts = ".mov"; }
-            else if (extn == 11) { exts = ".wmv"; }
-            else if (extn == 12) { exts = ".avi"; }
-            else if (extn == 13) { exts = ".mid"; }
-            else if (extn == 14) { exts = ".rar"; }
-            else if (extn == 15) { exts = ".zip"; }
-            else if (extn == 16) { exts = ".mpg"; }
-            else if (extn == 17) { exts = ".xls"; }
-            else if (extn == 18) { exts = ".ppt"; }
-            else if (extn == 19) { exts = ".rtf"; }
-            else if (extn == 20) { exts = ".dll"; }
-            else if (extn == 21) { exts = ".htm"; }
-            else if (extn == 22) { exts = ".scr"; }
-            else if (extn == 23) { exts = ".ico"; }
-            else if (extn == 24) { exts = ".bin"; }
-            else if (extn == 25) { exts = ".ini"; }
-            $(this).text(cl[2]+exts);
+            $(this).text(cl[2]);
         });
         
         {/block:IfCoolNotes}
